@@ -14,7 +14,7 @@ let {setToken}=useContext(userContext)
   
   const schemaValidation = Yup.object({
   email:Yup.string().required('email is required').email('enter avalid email'),
-  password:Yup.string().required('password is required').matches(/^[A-Z][a-z0-9]{4,}$/i,'enter avalid password'),
+  password:Yup.string().required('password is required').matches(/^[A-Za-z][a-z0-9]{4,}$/i,'enter avalid password 5 char at least 1 upper case 1 lower case 1 number 1 special char'),
   })
   
   async function signIn(values)

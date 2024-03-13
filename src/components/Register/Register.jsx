@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {useFormik}from 'formik'
 import * as Yup from 'yup';
@@ -12,7 +13,7 @@ const schemaValidation = Yup.object({
 name:Yup.string().min(3,'min lenght is 3char').max(15,'max lenght is 15 char').required('name is required input'),
 email:Yup.string().required('email is required').email('enter avalid email'),
 phone:Yup.string().required('phone is required').matches(/^01[0125][0-9]{8}$/i,'enter avalid phone number'),
-password:Yup.string().required('password is required').matches(/^[A-Z][a-z0-9]{4,}$/i,'enter avalid password'),
+password:Yup.string().required('password is required').matches(/^[A-Za-z][a-z0-9]{4,}$/i,'enter avalid password 5 char at least 1 upper case 1 lower case 1 number 1 special char'),
 rePassword:Yup.string().required('rePassword is required').oneOf([Yup.ref('password')],'not matched password'),
 })
 
